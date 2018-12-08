@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Darsh. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="darsh_shippingreport" frontName="darsh_shippingreport">
+            <module name="Darsh_Shippingreport" />
+        </route>
+    </router>
+</config>

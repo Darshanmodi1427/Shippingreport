@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Darsh. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="darsh_shippingreport::shippingreport" title="PCA Express Report" module="Darsh_Shippingreport" sortOrder="100" parent="Magento_Reports::report_salesroot" action="darsh_shippingreport/items/" resource="Darsh_Shippingreport::items"/>
+    </menu>
+</config>

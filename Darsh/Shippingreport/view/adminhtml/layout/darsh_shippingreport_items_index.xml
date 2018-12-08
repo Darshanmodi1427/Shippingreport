@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Darsh. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>        
+        <referenceContainer name="content">
+            <block class="Darsh\Shippingreport\Block\Adminhtml\Items" name="adminhtml.block.promo.quote.grid.container">
+                <block class="Magento\Backend\Block\Widget\Grid" name="adminhtml.block.promo.quote.grid" as="grid">
+                    <arguments>
+                        <argument name="id" xsi:type="string">darsh_shippingreport_items_grid</argument>
+                        <argument name="dataSource" xsi:type="object">Darsh\Shippingreport\Model\Resource\Items\Collection</argument>
+                        <argument name="default_sort" xsi:type="string">sort_order</argument>
+                        <argument name="default_dir" xsi:type="string">ASC</argument>
+                        <argument name="save_parameters_in_session" xsi:type="string">1</argument>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" as="grid.columnSet" name="adminhtml.promo.quote.grid.columnSet">
+                        <arguments>
+                            <argument name="rowUrl" xsi:type="array">
+                                <item name="path" xsi:type="string">darsh_shippingreport/*/edit</item>
+                                <item name="extraParamsTemplate" xsi:type="array">
+                                    <item name="id" xsi:type="string">getId</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="entity_id">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">ID</argument>
+                                <argument name="index" xsi:type="string">entity_id</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                         <block class="Magento\Backend\Block\Widget\Grid\Column" as="increment_id">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Oder ID</argument>
+                                <argument name="index" xsi:type="string">increment_id</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>                        
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="created_at">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Created Date</argument>
+                                <argument name="index" xsi:type="string">created_at</argument>
+                                <argument name="options" xsi:type="array">
+                                    <item name="showsTime" xsi:type="boolean">false</item>
+                                </argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="weight">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Weight</argument>
+                                <argument name="index" xsi:type="string">weight</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="shipping_method">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Shipping Method</argument>
+                                <argument name="index" xsi:type="string">shipping_method</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="shipping_incl_tax">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Shipping Rate</argument>
+                                <argument name="index" xsi:type="string">shipping_incl_tax</argument>
+                            </arguments>
+                        </block> 
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
